@@ -22,6 +22,7 @@ n_output = env.action_space.n
 def sample_experience(batch_size):
     indices = np.random.randint(len(replay_buffer), size= batch_size)
     batch = [replay_buffer[index] for index in indices]
+    print(batch)
     array = [np.array([experience[field_index] for experience in batch]) #  list comprehension
             for field_index in range(6)]
     return array
